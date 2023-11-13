@@ -1,22 +1,29 @@
 def zad4(n):
-    e=[0 for _ in range(n+3)]
-    epsi,epsi2=100,1000
-    sil=1
-    a=1
+    e=[0 for _ in range(n)]
     
-    while epsi>10:
-        jeden=1
-        for i in range(n):
-            e[i]+=jeden//sil
-            if e[i]>9:
-                e[i]-=10
-                e[i+1]+=1
-            jeden*=10
-            jeden//=sil
-        a+=1
-        sil*=a
-        epsi=e[n]*100+e[n+1]*10+e[n+2]
-        epsi=abs(epsi-epsi2)
-        epsi2=epsi
+    epsi,epsi2=1000,1000
+    silnia=1
+    # while epsi>10:
+    for i in range(1,n):
+        jedynka=1
+        for j in range(n):
+            if silnia>10**n:
+                break
+            e[j]+=jedynka//silnia
+            if e[j]>9:
+                e[j-1]+=1
+                e[j]-=10
+            jedynka%=silnia
+            jedynka*=10
+        silnia*=i
     return e
-print(zad4(10))
+def printe(T):
+    print(T[0],end='')
+    print('.',end='')
+    for i in range(1,len(T)):
+        print(T[i],end='')
+    print()
+printe(zad4(3000))
+#2.7182818284590455
+#54688957034808
+#54688957034808
