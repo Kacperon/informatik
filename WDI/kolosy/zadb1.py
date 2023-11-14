@@ -1,17 +1,17 @@
-T1=[7,13,17,19,23,2,6,4,8,3,5,7,1,3,2] 
+T1=[8,13,17,19,23,2,6,4,8,3,5,7,1,3,2] 
 T2=[]
 def zad(t):
     n=len(t)
     i=0
     tmaxmax,tminmin=10**10,0
     while i<n-1:
-        flag=False
+        flag=1
         tmin=t[i]
         while t[i]<t[i+1]:
             tmax=t[i+1]
             i+=1
-            flag=True
-        if flag:
+            flag+=1
+        if flag>2:
             if tmin>tminmin:
                 tminmin=tmin
             if tmax<tmaxmax:
@@ -20,4 +20,4 @@ def zad(t):
     if tminmin>tmaxmax:
         return True
     return False
-print(zad(T2))
+print(zad(T1))
