@@ -6,3 +6,4 @@ print(ejest(1000000000000000))
 def coś():
     return 1>0
 print(coś())
+#siema ja fan
