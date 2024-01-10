@@ -38,4 +38,3 @@ print(head)
 for x in T[:5]:
     remove(head,x)
 print(head)
-is ==
